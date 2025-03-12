@@ -60,7 +60,7 @@ $students = $student->getStudent();
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='6' class='text-center'>No students found</td></tr>";
+                            echo "<tr><td colspan='8' class='text-center'>No students found</td></tr>";
                         }
                         ?>
                     </tbody>

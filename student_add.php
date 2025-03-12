@@ -37,22 +37,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Update existing student
             $student_id = $_POST['student_id'];
             if ($student->update($full_name, $email, $dob, $department, $profile_image_url, $student_id)) {
-                echo "<div class='alert alert-success'>Student updated successfully!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-success mt-4'>Student updated successfully!</div>";
             } else {
-                echo "<div class='alert alert-danger'>Error updating student!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-danger mt-4'>Error updating student!</div>";
             }
         } else {
             // Insert new student
             if ($student->create($full_name, $email, $dob, $department, $profile_image_url, $register_date, $expire_date)) {
-                echo "<div class='alert alert-success'>Registration successful!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-success mt-4'>Registration successful!</div>";
+                
             } else {
-                echo "<div class='alert alert-danger'>Error registering student!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-danger mt-4'>Error registering student!</div>";
             }
         }
     } else {
-        echo "<div class='alert alert-warning'>Full Name and Email are required.</div>";
+        echo "<div id='alert' style='width:80%; margin: 0 auto;' class='alert alert-warning mt-4'>Full Name and Email are required.</div>";
     }
 }
+echo "<script>setTimeout(function(){ $('#alert').fadeOut(1000); }, 2000);</script>";
 
 // Fetch student data for editing if an id is provided
 if (isset($_GET['id'])) {
