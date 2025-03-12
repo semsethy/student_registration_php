@@ -20,6 +20,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Handle profile image upload
     if (!empty($_FILES['profile_image']['name']) && $_FILES['profile_image']['error'] == 0) {
+        // If there is a new profile image, check if there's an old one to delete
+        if (isset($_POST['existing_profile_image']) && !empty($_POST['existing_profile_image'])) {
+            // Delete the old image if a new image is uploaded
+            $old_image_path = $_POST['existing_profile_image'];
+            if (file_exists($old_image_path)) {
+                unlink($old_image_path); // Delete the old image
+            }
+        }
+
+        // Upload the new profile image
         $file_ext = pathinfo($_FILES["profile_image"]["name"], PATHINFO_EXTENSION);
         $profile_image_url = $upload_dir . uniqid() . "." . $file_ext;
 
@@ -37,21 +47,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Update existing student
             $student_id = $_POST['student_id'];
             if ($student->update($full_name, $email, $dob, $department, $profile_image_url, $student_id)) {
-                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-success mt-4'>Student updated successfully!</div>";
+                echo "<div id='alert' style='width:80%; margin: 0 auto;  z-index: 1000;' class='alert alert-success mt-4'>Student updated successfully!</div>";
             } else {
-                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-danger mt-4'>Error updating student!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto; z-index: 1000;' class='alert alert-danger mt-4'>Error updating student!</div>";
             }
         } else {
             // Insert new student
             if ($student->create($full_name, $email, $dob, $department, $profile_image_url, $register_date, $expire_date)) {
-                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-success mt-4'>Registration successful!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto; z-index: 1000;' class='alert alert-success mt-4'>Registration successful!</div>";
                 
             } else {
-                echo "<div id='alert' style='width:80%;margin: 0 auto;' class='alert alert-danger mt-4'>Error registering student!</div>";
+                echo "<div id='alert' style='width:80%;margin: 0 auto; z-index: 1000;' class='alert alert-danger mt-4'>Error registering student!</div>";
             }
         }
     } else {
-        echo "<div id='alert' style='width:80%; margin: 0 auto;' class='alert alert-warning mt-4'>Full Name and Email are required.</div>";
+        echo "<div id='alert' style='width:80%; margin: 0 auto; z-index: 1000;' class='alert alert-warning mt-4'>Full Name and Email are required.</div>";
     }
 }
 echo "<script>setTimeout(function(){ $('#alert').fadeOut(1000); }, 2000);</script>";

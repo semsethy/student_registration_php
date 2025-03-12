@@ -21,7 +21,7 @@
   data-sidebar-position="fixed" data-header-position="fixed">
   <?php include 'include/nav.php'?>
   <div class="body-wrapper">
-    
+    <?php include 'include/header.php'?>
     <?php include "$page" ?>
   </div>
 </div>
