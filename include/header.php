@@ -1,4 +1,4 @@
-<header class="app-header">
+<header class="app-header bg-light">
   <nav class="navbar navbar-expand-lg navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item d-block d-xl-none">
@@ -34,7 +34,7 @@
                 <i class="ti ti-list-check fs-6"></i>
                 <p class="mb-0 fs-3">My Task</p>
               </a>
-              <a href="javascript:void(0)" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+              <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
             </div>
           </div>
         </li>

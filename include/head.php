@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RUPP</title>
+  <title>Royal University of Phnom Penh</title>
   <link rel="shortcut icon" type="image/png" href="images/logos/rupp_logo.png" />
   <link rel="stylesheet" href="css/styles.min.css" />
   <link rel="stylesheet" href="product.css" />

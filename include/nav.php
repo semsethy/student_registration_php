@@ -1,5 +1,5 @@
 
-<aside class="left-sidebar">
+<aside class="left-sidebar bg-light">
   <!-- Sidebar scroll-->
   <div>
   <div class="brand-logo d-flex align-items-center justify-content-center">
@@ -10,6 +10,7 @@
       <i class="ti ti-x fs-8"></i>
     </div>
   </div>
+  <!-- <h6 class="text-center pt-3">Royal University of Phnom Penh</h6> -->
     <!-- Sidebar navigation-->
     <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
       <ul id="sidebarnav">

@@ -1,5 +1,10 @@
 
 <?php
+session_start();
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: login.php");
+    exit(); 
+}
     $page = "student_list.php";
     $p = "student_list.php";
     if(isset($_GET['p'])){
