@@ -75,7 +75,7 @@ if (isset($_GET['id'])) {
 
 <!-- Registration Form -->
 <div class="container-fluid">
-    <h1><?php echo isset($student_data['id']) ? "Edit Student" : "Student Registeration"; ?></h1>
+    <h1 class="mt-4"><?php echo isset($student_data['id']) ? "Edit Student" : "Student Registeration"; ?></h1>
     <div class="card p-4 mt-5">
         <form action="" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="student_id" value="<?php echo isset($student_data['id']) ? $student_data['id'] : ''; ?>" />

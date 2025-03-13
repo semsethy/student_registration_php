@@ -12,7 +12,7 @@ $students = $student->getStudent();
     }
 </style>
 <div class="container-fluid">
-    <h1>Student List</h1>
+    <h1 class="mt-4">Student List</h1>
 
     <div class="mb-4" style="text-align: right;">
         <a href="index.php?p=student_add" style="background-color: #28a745; color: white; border-radius: 4px; padding: 8px 12px; border: none; cursor: pointer;">+ New</a>
