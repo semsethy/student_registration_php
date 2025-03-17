@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "backend";
+    private $db_name = "backend1";
     private $username = "root";
     private $password = "root";
     private $conn;
